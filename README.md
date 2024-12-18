@@ -21,3 +21,7 @@ Welcome to the **Recipe App**! 🍳 This application allows you to search for de
 1. Clone the repository:
    ```bash
    git clone https://github.com/itssharmajee/recipe-app.git
+    ```
+
+## View Project Live Preview
+[click me ](https://recipe-app-gxx3.onrender.com)
