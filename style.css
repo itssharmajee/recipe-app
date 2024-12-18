@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #2b1d0f;
+    color: #fff;
+}
+
+header nav {
+    background-color: #212121;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+header nav h1 {
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header nav form {
+    display: flex;
+    justify-content: center;
+}
+
+form input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+form input[type="text"],
+button[type="submit"] {
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+form button[type="submit"] {
+    background-color: #f44336;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form button[type="submit"]:hover,
+.recipe button:hover,
+.recipe-closeBtn:hover {
+    /* hower effect will work on both  */
+    background-color: #f11d0e;
+}
+
+/* moving to the main part */
+
+.recipe-container {
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.recipe {
+    width: 20vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(78, 73, 73, 0.1),
+        -5px -5px 10px rgba(34, 34, 34, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe:hover {
+    transform: scale(1.04);
+}
+
+.recipe h3 {
+    font-size: 24px;
+}
+
+.recipe p {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin: 5px 0;
+}
+
+.recipe span {
+    font-weight: 550;
+}
+
+.recipe button {
+    font-size: 18px;
+    font-weight: 570;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin: 6px 5px;
+    background-color: #f44336;
+    color: white;
+}
+
+/* recipe destails */
+
+.recipe-details::-webkit-scrollbar {
+    width: 10px;
+}
+
+.recipe-details::-webkit-scrollbar-thumb {
+    background-color: #b5b5ba;
+    border-radius: 16px;
+    --webkit-border-radius: 16px;
+}
+
+.recipe-details-content {
+    padding: 30px;
+}
+
+.recipeName {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.ingredientsList {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.instructions p {
+    line-height: 30px;
+    white-space: pre-line;
+}
+
+.recipe-closeBtn {
+    border: none;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f44336;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    background-color: #694c2f;
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    /* font-size: 20px; */
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+}
+
+/* Making web page responsive */
+
+@media screen and (max-width: 600px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header nav form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    form input[type="text"] {
+        flex-grow: 1;
+        margin-right: 0px;
+    }
+
+    .recipe h3,
+    p {
+        font-size: 0px;
+    }
+}
+
+/* Media query for small devices */
+@media (max-width: 600px) {
+    .recipe {
+        width: 80vw;
+        margin: 10px;
+    }
+}
+
+/* Media query for medium devices */
+@media (min-width: 601px) and (max-width: 900px) {
+    .recipe {
+        width: 50vw;
+    }
+}
+
+/* Media query for small devices (phones) */
+
+@media (max-width: 600px) {
+    .recipe-details {
+        width: 90%;
+        height: 80%;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Media query for medium devices (tablets) */
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .recipe-details {
+        width: 70%;
+        height: 70%;
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+/* Media query for large devices (desktops) */
+
+@media (min-width: 901px) {
+    .recipe-details {
+        width: 40%;
+        height: 60%;
+        font-size: 18px;
+    }
+}
